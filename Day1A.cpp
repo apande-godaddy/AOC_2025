@@ -203,21 +203,13 @@ void solve(){
     int cnt=0;
     while(cin>>s){
         int turn=stoi(s.substr(1));
-        int times=turn/100;
-        cnt+=times;
         if(s[0]=='L'){
-            int rem=turn%100;
-            int diff=val-0;
-            if(rem>=diff && diff!=0) cnt++;
             val=(val-turn%100+100)%100;
         }
         else{
-            int rem=turn%100;
-            int diff=100-val;
-            if(rem>=diff && diff!=0) cnt++;
             val=(val+turn)%100;
         }
-        // cout<<val<<" "<<cnt<<"\n";
+        if(val==0) cnt++;
     }
 
     cout<<cnt<<"\n";
